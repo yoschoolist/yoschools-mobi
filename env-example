@@ -1,0 +1,15 @@
+# Environment Variables for YoSchools Mobile App
+
+# Copy this file to .env.development, .env.staging, or .env.production
+# and fill in your actual values
+
+# Mapbox Configuration
+EXPO_PUBLIC_MAPBOX_TOKEN=your_mapbox_access_token_here
+
+# API Configuration
+API_URL=your_api_url_here
+GRAPHQL_URL=your_graphql_url_here
+
+# App Configuration
+APP_ENV=development
+EXPO_PLATFORM=ios
