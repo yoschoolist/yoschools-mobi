@@ -16,6 +16,7 @@ export const TopBar = ({
   onNotificationPress,
   onMessagesPress,
   onAddPress,
+  onSettingsPress,
 }: TopBarProps) => {
   const insets = useSafeAreaInsets();
   

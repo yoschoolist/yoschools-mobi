@@ -87,5 +87,43 @@
     <string>Automatic</string>
     <key>UIViewControllerBasedStatusBarAppearance</key>
     <false/>
+    
+    <!-- Mapbox iOS Requirements -->
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>This app uses location to show nearby schools and provide directions.</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>This app uses location to show nearby schools and provide directions.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>This app uses location to show nearby schools and provide directions.</string>
+    
+    <!-- Mapbox Network Access -->
+    <key>NSAppTransportSecurity</key>
+    <dict>
+      <key>NSAllowsArbitraryLoads</key>
+      <false/>
+      <key>NSAllowsLocalNetworking</key>
+      <true/>
+      <key>NSExceptionDomains</key>
+      <dict>
+        <key>mapbox.com</key>
+        <dict>
+          <key>NSExceptionAllowsInsecureHTTPLoads</key>
+          <false/>
+          <key>NSExceptionMinimumTLSVersion</key>
+          <string>TLSv1.2</string>
+          <key>NSExceptionRequiresForwardSecrecy</key>
+          <true/>
+        </dict>
+        <key>mapbox.cn</key>
+        <dict>
+          <key>NSExceptionAllowsInsecureHTTPLoads</key>
+          <false/>
+          <key>NSExceptionMinimumTLSVersion</key>
+          <string>TLSv1.2</string>
+          <key>NSExceptionRequiresForwardSecrecy</key>
+          <true/>
+        </dict>
+      </dict>
+    </dict>
   </dict>
 </plist>

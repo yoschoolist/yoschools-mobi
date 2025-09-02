@@ -7,12 +7,7 @@ const IS_FIRST_TIME = 'IS_FIRST_TIME';
 export const useIsFirstTime = () => {
   const [isFirstTime, setIsFirstTime] = useMMKVBoolean(IS_FIRST_TIME, storage);
   
-  // In development, always show onboarding
-  if (__DEV__) {
-    return [true, setIsFirstTime] as const;
-  }
-  
-  // In production, use the stored value
+  // Use the stored value (both in development and production)
   if (isFirstTime === undefined) {
     return [true, setIsFirstTime] as const;
   }

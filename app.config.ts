@@ -5,7 +5,7 @@ import type { AppIconBadgeConfig } from 'app-icon-badge/types';
 import { ClientEnv, Env } from './env';
 
 const appIconBadgeConfig: AppIconBadgeConfig = {
-  enabled: Env.APP_ENV !== 'production',
+  enabled: false, // Disabled to remove development text and version from app icon
   badges: [
     {
       text: Env.APP_ENV,
@@ -76,6 +76,12 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     'expo-router',
     ['app-icon-badge', appIconBadgeConfig],
     ['react-native-edge-to-edge'],
+    [
+      '@rnmapbox/maps',
+      {
+        mapboxPublicKey: Env.EXPO_PUBLIC_MAPBOX_TOKEN,
+      },
+    ],
   ],
   extra: {
     ...ClientEnv,

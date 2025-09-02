@@ -123,13 +123,15 @@ export default function Onboarding() {
   const [isProgrammaticScroll, setIsProgrammaticScroll] = useState(false);
   const scrollViewRef = useRef<ScrollView>(null);
 
-  // Simple storage that works on both platforms
+  // Use the existing MMKV storage to set isFirstTime
   const safeSetIsFirstTime = async (value: boolean) => {
     try {
-      // Skip storage for now since AsyncStorage is not installed
-      console.log('Storage skipped - AsyncStorage not available');
+      // Import and use the existing storage
+      const { storage } = require('@/lib/storage');
+      storage.set('IS_FIRST_TIME', value);
+      console.log('Successfully stored isFirstTime:', value);
     } catch (error) {
-      console.warn('Storage failed, but continuing with navigation:', error);
+      console.warn('Failed to store isFirstTime, but continuing with navigation:', error);
     }
   };
 
